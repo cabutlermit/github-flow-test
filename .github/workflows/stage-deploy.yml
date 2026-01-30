@@ -52,6 +52,9 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
 
+      - name: Checkout code
+        uses: actions/checkout@v5
+
       - name: Directory and Path Tests
         working-directory: ${{ matrix.paths }}
         run: |
