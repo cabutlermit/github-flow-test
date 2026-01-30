@@ -44,6 +44,8 @@ jobs:
       matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
       fail-fast: false
     runs-on: ubuntu-latest
+    # Only run if the content of "paths" is not empty in the matrix 
+    if: ${{ fromJson(needs.generate-matrix.outputs.matrix).paths[0] != null }}
     steps:
       - name: Show GitHub context
         env:
