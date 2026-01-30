@@ -69,3 +69,11 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+
+      - name: Directory and Path Tests
+        working-directory: ${{ matrix.paths }}
+        run: |
+          echo "The working directory is ${{ matrix.paths }}"
+          ls -al
+          pwd
+          
