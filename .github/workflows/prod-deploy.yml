@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   generate-matrix:
+    if: github.event.release.target_commitish == 'main'
     # See the .github/scripts/generate-matrix.sh for the details of the matrix
     # construction.
     name: Generate matrix for deploy
